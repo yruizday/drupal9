@@ -1,0 +1,3 @@
+services:
+  reserve_globo_modelo.manager:
+    class: Drupal\reserve_globo_modelo\ReserveGloboModeloManager

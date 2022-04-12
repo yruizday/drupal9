@@ -1,0 +1,13 @@
+global-styling:
+  version: VERSION
+  css:
+    layout:
+      css/reserve_globo_modelo.css: {}
+  js:
+    js/reserve_globo_modelo.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

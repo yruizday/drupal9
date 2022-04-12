@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Contains reserve_globo_modelo.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function reserve_globo_modelo_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the reserve_globo_modelo module.
+    case 'help.page.reserve_globo_modelo':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom module for the Reserva Globo Modelo') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function reserve_globo_modelo_page_attachments(&$variables) {
+  $variables['#attached']['library'][] = 'reserve_globo_modelo/global-styling';
+}

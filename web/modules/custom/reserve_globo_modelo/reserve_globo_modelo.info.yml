@@ -1,0 +1,8 @@
+name: 'Reserve Globo Modelo'
+type: module
+description: 'Custom module for the Reserva Globo Modelo'
+configure: reserve_globo_modelo.settings
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+dependencies:
+  - webform:webform

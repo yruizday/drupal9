@@ -1,0 +1,41 @@
+reserve_globo_modelo.settings:
+  path: '/admin/config/reservas/settings'
+  defaults:
+    _form: 'Drupal\reserve_globo_modelo\Form\ReserveGloboModeloSettingsForm'
+    _title: 'Settings'
+  requirements:  
+    _permission: 'administer reserve_globo_modelo'  
+  options:  
+    _admin_route: TRUE 
+
+reserve_globo_modelo.admin:
+  path: '/reservas/admin'
+  defaults:
+    _form: 'Drupal\reserve_globo_modelo\Form\ReserveAdminGloboModeloForm'
+    _title: 'Administración de Reservas'
+  requirements:
+    _permission: 'access content'
+
+reserve_globo_modelo.widget:
+  path: '/reservas/widget'
+  defaults:
+    _form: 'Drupal\reserve_globo_modelo\Form\ReserveWidgetGloboModeloForm'
+    _title: 'Realiza tu reserva aquí'
+  requirements:
+    _permission: 'access content'
+
+reserve_globo_modelo.reserve:
+  path: '/reservas'
+  defaults:
+    _form: 'Drupal\reserve_globo_modelo\Form\ReserveGloboModeloForm'
+    _title: 'Realiza tu reserva aquí'
+  requirements:
+    _permission: 'access content'
+
+reserve_globo_modelo.check:
+  path: '/reservas/consulta'
+  defaults:
+    _form: 'Drupal\reserve_globo_modelo\Form\ReserveCheckGloboModeloForm'
+    _title: 'Consulta tu reserva aquí'
+  requirements:
+    _permission: 'access content'

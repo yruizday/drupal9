@@ -1,0 +1,30 @@
+<?php
+
+use \Symfony\Component\Yaml\Yaml;
+//use Drupal\Core\Serialization\Yaml;
+use Drupal\webform\Entity\Webform;
+
+/**
+ * Installs the file upload element
+ */
+
+function _update_or_install_webform_config(String $prefix, String $module) {
+  /** @var \Drupal\Core\Config\ConfigManagerInterface $config_manager */
+  $config_manager = \Drupal::service('config.manager');
+  $files = glob(drupal_get_path('module', $module) . '/config/install/' . $prefix . '*.yml') ;
+  foreach ($files as $file) {
+    $raw = file_get_contents($file);
+    $value = \Drupal\Component\Serialization\Yaml::encode($raw);
+    if(!is_array($value)) {
+      throw new \RuntimeException(sprintf('Invalid YAML file %s'), $file);
+    }
+    $webform = Webform::create($value);
+    $webform->save();
+  }
+  return ['OK'];
+}
+
+function reserve_globo_modelo_update_8002() {
+  _update_or_install_webform_config('webform_reserve_globo_modelo', 'reserve_globo_modelo');
+  _update_or_install_webform_config('webform_reserve_globo_modelo', 'reserve_data_globo_modelo');
+}
